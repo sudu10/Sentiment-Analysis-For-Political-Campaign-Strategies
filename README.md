@@ -102,11 +102,3 @@ Khan, I. U., & Khan, M. U. S. (2024). Social Media Profiling for Political Affil
 ## License
 
 This project is licensed under the MIT License.
-
-### Key Features of This README:
-1. Clear distinction between the two main components
-2. Specific dataset requirements for each script
-3. Technical details without overwhelming complexity
-4. Proper academic reference to the source paper
-5. Clean, professional formatting with badges
-6. Concise installation and usage instructions
