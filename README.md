@@ -1,7 +1,5 @@
 # Political Sentiment Analysis & Campaign Strategy Generator
 
-A suite of tools for political sentiment analysis and campaign strategy generation using BERT-based models and Explainable AI techniques.
-
 ## Project Overview
 
 This project consists of two main components:
