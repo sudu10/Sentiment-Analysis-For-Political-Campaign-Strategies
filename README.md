@@ -1,70 +1,114 @@
-# Sentiment-Analysis-For-Political-Campaign-Strategies
+# Political Sentiment Analysis & Campaign Strategy Generator
 
-```
-# BRET-Based Campaign Sentiment Dashboard
+A suite of tools for political sentiment analysis and campaign strategy generation using BERT-based models and Explainable AI techniques.
 
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-yellow?style=for-the-badge&logo=huggingface&logoColor=white)
+## Project Overview
 
-## 📌 Overview
-A political campaign sentiment analysis tool that:
-- Classifies tweet sentiments using BERT (Positive/Neutral/Negative)
-- Visualizes geographical and temporal trends
-- Generates PDF campaign strategies
-- Analyzes party-specific and topic-based sentiment
+This project consists of two main components:
 
-2. Run the app:
-```bash
-streamlit run app.py
-```
+1. **DSproject_BERT.py**: Advanced sentiment analysis dashboard for political tweets with comprehensive visualization capabilities
+2. **XAI.py**: Explainable AI tool that generates actionable campaign strategies based on sentiment analysis
 
-3. Upload a CSV with these columns:
-   - `tweet` (text content)
-   - `location` (geographical data)
+Inspired by research from Khan & Khan (2024) on political affiliation detection using BERT, this implementation extends their work with practical applications for political campaign strategy.
 
-##  Features
+## Features
 
-### Sentiment Analysis
-- BERT-based classification (Positive/Neutral/Negative)
-- Batch processing for efficiency
-- GPU acceleration support
+### DSproject_BERT.py
+- BERT-based sentiment classification (Positive/Negative/Neutral)
+- Interactive Streamlit dashboard with multiple visualization options
+- Temporal sentiment trend analysis
+- Confusion matrix and model performance metrics
+- Network analysis of political entities
+- Export capabilities for analysis results
 
-### Geographical Insights
-- Interactive heatmap by location
-- Region-specific strategy generation
-- Location filtering capabilities
-
-### Temporal Analysis
-- Daily sentiment trends
-- Time-based filtering
-- Historical pattern identification
-
-### Strategy Generation
-- Automated PDF report creation
-- Context-aware recommendations
-- Downloadable strategies
-
-### Party Analysis
-- Detects mentions of 20+ Indian political parties
+### XAI.py
+- Location-based sentiment analysis
+- Automated campaign strategy generation
 - Party-specific sentiment breakdown
-- Custom strategy generation
+- Topic modeling and keyword extraction
+- PDF report generation for strategies
+- Data export functionality
 
-### Topic Modeling
-- Automatic keyword extraction
-- Topic-based sentiment analysis
-- Custom keyword filtering
+## Usage
 
-## Example CSV Format
+### DSproject_BERT.py
+For comprehensive sentiment analysis:
+```bash
+streamlit run DSproject_BERT.py
+```
 
-| tweet                          | location    |
-|--------------------------------|-------------|
-| "Great policy announcement!"   | Delhi       |
-| "Disappointed with leadership" | Mumbai      |
+**Dataset Requirements:**
+CSV file containing tweets with "text" as column name
 
-## 🛠️ Technical Details
+### XAI.py
+For campaign strategy generation:
+```bash
+streamlit run XAI.py
+```
 
-### Model Architecture
-- BERT-base-uncased
-- 3-class classification (Negative/Neutral/Positive)
-- Max sequence length: 128 tokens
+**Dataset Requirements:**
+CSV file with columns: 'tweet' (required), 'location' (required)
+
+## Dataset Information
+
+### For DSproject_BERT.py
+- **Format**: CSV
+- **Required Column**: 'tweet' (text content)
+- **Sample Structure**:
+  ```
+  tweet
+  "Great policy announcement by the government!"
+  "Disappointed with the new legislation"
+  ```
+
+### For XAI.py
+- **Format**: CSV
+- **Required Columns**: 'tweet', 'location'
+- **Sample Structure**:
+  ```
+  tweet,location,date
+  "Campaign rally was amazing!",Delhi
+  "Poor infrastructure in our area",Mumbai
+  ```
+
+## Technical Details
+
+### Models
+- BERT-base-uncased for sentiment classification
+- Custom fine-tuning for political context
+- SHAP values for explainability (XAI.py)
+
+### Key Components
+- **Sentiment Analysis Pipeline**: Tokenization → BERT Inference → Classification
+- **Strategy Generation**: Rule-based recommendations from sentiment distributions
+- **Visualization**: Plotly, Matplotlib, Seaborn
+- **Reporting**: PDF generation with FPDF
+
+## Results Interpretation
+
+### Sentiment Classification
+- **Positive (2)**: Supportive of subject/party
+- **Neutral (1)**: No clear stance
+- **Negative (0)**: Critical of subject/party
+
+### Strategy Recommendations
+Strategies are generated based on:
+- Regional sentiment distributions
+- Party-specific sentiment patterns
+- Topic prevalence in conversations
+
+## References
+
+Khan, I. U., & Khan, M. U. S. (2024). Social Media Profiling for Political Affiliation Detection. *Human-Centric Intelligent Systems*, 4, 437-446. https://doi.org/10.1007/s44230-024-00078-y
+
+## License
+
+This project is licensed under the MIT License.
+
+### Key Features of This README:
+1. Clear distinction between the two main components
+2. Specific dataset requirements for each script
+3. Technical details without overwhelming complexity
+4. Proper academic reference to the source paper
+5. Clean, professional formatting with badges
+6. Concise installation and usage instructions
